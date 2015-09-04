@@ -38,3 +38,11 @@ label {
 legend {
     font-size: 30px;
 }
+
+a {
+    font-size: 24px;
+}
+
+li {
+    list-style: none;
+}
