@@ -25,12 +25,12 @@
         function testGetUserName()
         {
             $user_name = "Wolf";
-            $user_buy_quantity = 5;
+            // $user_buy_quantity = 5;
             $user_phone = '1234567890';
             $user_email = "howl@yellowstone.com";
-            $activity_id = 100;
+            // $activity_id = 100;
             $id = 1;
-            $test_user = new User($user_name, $user_buy_quantity, $user_phone, $user_email, $activity_id, $id);
+            $test_user = new User($user_name, $user_phone, $user_email, $id);
             $test_user->save();
 
             $result = $test_user->getUserName();
@@ -41,12 +41,12 @@
         function testSetUserName()
         {
             $user_name = "Wolf";
-            $user_buy_quantity = 5;
+            // $user_buy_quantity = 5;
             $user_phone = '1234567890';
             $user_email = "howl@yellowstone.com";
-            $activity_id = 100;
+            // $activity_id = 100;
             $id = 1;
-            $test_user = new User($user_name, $user_buy_quantity, $user_phone, $user_email, $activity_id, $id);
+            $test_user = new User($user_name, $user_phone, $user_email, $id);
             $test_user->save();
 
             $test_user->setUserName("WolfMan");
@@ -55,48 +55,48 @@
             $this->assertEquals("WolfMan", $result);
         }
 
-        function testGetBuyQuantity()
-        {
-            $user_name = "Wolf";
-            $user_buy_quantity = 5;
-            $user_phone = '1234567890';
-            $user_email = "howl@yellowstone.com";
-            $activity_id = 100;
-            $id = 1;
-            $test_user = new User($user_name, $user_buy_quantity, $user_phone, $user_email, $activity_id, $id);
-            $test_user->save();
+        // function testGetBuyQuantity()
+        // {
+        //     $user_name = "Wolf";
+        //     // $user_buy_quantity = 5;
+        //     $user_phone = '1234567890';
+        //     $user_email = "howl@yellowstone.com";
+        //     $activity_id = 100;
+        //     $id = 1;
+        //     $test_user = new User($user_name, $user_buy_quantity, $user_phone, $user_email, $activity_id, $id);
+        //     $test_user->save();
+        //
+        //     $result = $test_user->getBuyQuantity();
+        //
+        //     $this->assertEquals($result, $user_buy_quantity);
+        // }
 
-            $result = $test_user->getBuyQuantity();
-
-            $this->assertEquals($result, $user_buy_quantity);
-        }
-
-        function testSetBuyQuantity()
-        {
-            $user_name = "Wolf";
-            $user_buy_quantity = 5;
-            $user_phone = '1234567890';
-            $user_email = "howl@yellowstone.com";
-            $activity_id = 100;
-            $id = 1;
-            $test_user = new User($user_name, $user_buy_quantity, $user_phone, $user_email, $activity_id, $id);
-            $test_user->save();
-
-            $test_user->setBuyQuantity(6);
-            $result = $test_user->getBuyQuantity();
-
-            $this->assertEquals(6, $result);
-        }
+        // function testSetBuyQuantity()
+        // {
+        //     $user_name = "Wolf";
+        //     // $user_buy_quantity = 5;
+        //     $user_phone = '1234567890';
+        //     $user_email = "howl@yellowstone.com";
+        //     $activity_id = 100;
+        //     $id = 1;
+        //     $test_user = new User($user_name, $user_phone, $user_email, $activity_id, $id);
+        //     $test_user->save();
+        //
+        //     $test_user->setBuyQuantity(6);
+        //     $result = $test_user->getBuyQuantity();
+        //
+        //     $this->assertEquals(6, $result);
+        // }
 
         function testGetUserPhone()
         {
             $user_name = "Wolf";
-            $user_buy_quantity = 5;
+            // $user_buy_quantity = 5;
             $user_phone = '1234567890';
             $user_email = "howl@yellowstone.com";
-            $activity_id = 100;
+            // $activity_id = 100;
             $id = 1;
-            $test_user = new User($user_name, $user_buy_quantity, $user_phone, $user_email, $activity_id, $id);
+            $test_user = new User($user_name, $user_phone, $user_email, $id);
             $test_user->save();
 
             $result = $test_user->getUserPhone();
@@ -107,29 +107,29 @@
         function testSetUserPhone()
         {
             $user_name = "Wolf";
-            $user_buy_quantity = 5;
+            // $user_buy_quantity = 5;
             $user_phone = '1234567890';
             $user_email = "howl@yellowstone.com";
-            $activity_id = 100;
+            // $activity_id = 100;
             $id = 1;
-            $test_user = new User($user_name, $user_buy_quantity, $user_phone, $user_email, $activity_id, $id);
+            $test_user = new User($user_name, $user_phone, $user_email, $id);
             $test_user->save();
 
             $test_user->setUserPhone('1234567000');
             $result = $test_user->getUserPhone();
 
-            $this->assertEquals(1234567000, $result);
+            $this->assertEquals('1234567000', $result);
         }
 
         function testGetUserEmail()
         {
             $user_name = "Wolf";
-            $user_buy_quantity = 5;
+            // $user_buy_quantity = 5;
             $user_phone = '1234567890';
             $user_email = "howl@yellowstone.com";
-            $activity_id = 100;
+            // $activity_id = 100;
             $id = 1;
-            $test_user = new User($user_name, $user_buy_quantity, $user_phone, $user_email, $activity_id, $id);
+            $test_user = new User($user_name, $user_phone, $user_email, $id);
             $test_user->save();
 
             $result = $test_user->getUserEmail();
@@ -140,12 +140,12 @@
         function testSetUserEmail()
         {
             $user_name = "Wolf";
-            $user_buy_quantity = 5;
+            // $user_buy_quantity = 5;
             $user_phone = '1234567890';
             $user_email = "howl@yellowstone.com";
-            $activity_id = 100;
+            // $activity_id = 100;
             $id = 1;
-            $test_user = new User($user_name, $user_buy_quantity, $user_phone, $user_email, $activity_id, $id);
+            $test_user = new User($user_name, $user_phone, $user_email, $id);
             $test_user->save();
 
             $test_user->setUserEmail("bloodmoon@yellowstone.com");
@@ -153,49 +153,49 @@
 
             $this->assertEquals("bloodmoon@yellowstone.com", $result);
         }
-
-        function testGetActivityId()
-        {
-            $user_name = "Wolf";
-            $user_buy_quantity = 5;
-            $user_phone = '1234567890';
-            $user_email = "howl@yellowstone.com";
-            $activity_id = 100;
-            $id = 1;
-            $test_user = new User($user_name, $user_buy_quantity, $user_phone, $user_email, $activity_id, $id);
-            $test_user->save();
-
-            $result = $test_user->getActivityId();
-
-            $this->assertEquals($result, $activity_id);
-        }
-
-        function testSetActivityId()
-        {
-            $user_name = "Wolf";
-            $user_buy_quantity = 5;
-            $user_phone = '1234567890';
-            $user_email = "howl@yellowstone.com";
-            $activity_id = 100;
-            $id = 1;
-            $test_user = new User($user_name, $user_buy_quantity, $user_phone, $user_email, $activity_id, $id);
-            $test_user->save();
-
-            $test_user->setActivityId(200);
-            $result = $test_user->getActivityId();
-
-            $this->assertEquals(200, $result);
-        }
+        //
+        // function testGetActivityId()
+        // {
+        //     $user_name = "Wolf";
+        //     // $user_buy_quantity = 5;
+        //     $user_phone = '1234567890';
+        //     $user_email = "howl@yellowstone.com";
+        //     // $activity_id = 100;
+        //     $id = 1;
+        //     $test_user = new User($user_name, $user_phone, $user_email, $id);
+        //     $test_user->save();
+        //
+        //     $result = $test_user->getActivityId();
+        //
+        //     $this->assertEquals($result, $activity_id);
+        // }
+        //
+        // function testSetActivityId()
+        // {
+        //     $user_name = "Wolf";
+        //     // $user_buy_quantity = 5;
+        //     $user_phone = '1234567890';
+        //     $user_email = "howl@yellowstone.com";
+        //     $activity_id = 100;
+        //     $id = 1;
+        //     $test_user = new User($user_name, $user_phone, $user_email, $activity_id, $id);
+        //     $test_user->save();
+        //
+        //     $test_user->setActivityId(200);
+        //     $result = $test_user->getActivityId();
+        //
+        //     $this->assertEquals(200, $result);
+        // }
 
         function testGetId()
         {
             $user_name = "Wolf";
-            $user_buy_quantity = 5;
+            // $user_buy_quantity = 5;
             $user_phone = '1234567890';
             $user_email = "howl@yellowstone.com";
-            $activity_id = 100;
+            // $activity_id = 100;
             $id = 1;
-            $test_user = new User($user_name, $user_buy_quantity, $user_phone, $user_email, $activity_id, $id);
+            $test_user = new User($user_name, $user_phone, $user_email, $id);
             $test_user->save();
 
             $result = $test_user->getId();
@@ -206,17 +206,17 @@
         function testDeleteAll()
         {
             $user_name = "Wolf";
-            $user_buy_quantity = 5;
+            // $user_buy_quantity = 5;
             $user_phone = '1234567890';
             $user_email = "howl@yellowstone.com";
-            $activity_id = 100;
+            // $activity_id = 100;
             $id = 1;
-            $test_user = new User($user_name, $user_buy_quantity, $user_phone, $user_email, $activity_id, $id);
+            $test_user = new User($user_name, $user_phone, $user_email, $id);
             $test_user->save();
 
             $user_name2 = "WolfMan";
             $id2 = 2;
-            $test_user2 = new User($user_name2, $user_buy_quantity, $user_phone, $user_email, $activity_id, $id2);
+            $test_user2 = new User($user_name2, $user_phone, $user_email, $id2);
             $test_user2->save();
 
             User::deleteAll();
@@ -228,17 +228,17 @@
         function testGetAll()
         {
             $user_name = "Wolf";
-            $user_buy_quantity = 5;
+            // $user_buy_quantity = 5;
             $user_phone = '1234567890';
             $user_email = "howl@yellowstone.com";
-            $activity_id = 100;
+            // $activity_id = 100;
             $id = 1;
-            $test_user = new User($user_name, $user_buy_quantity, $user_phone, $user_email, $activity_id, $id);
+            $test_user = new User($user_name, $user_phone, $user_email, $id);
             $test_user->save();
 
             $user_name2 = "WolfMan";
             $id2 = 2;
-            $test_user2 = new User($user_name2, $user_buy_quantity, $user_phone, $user_email, $activity_id, $id2);
+            $test_user2 = new User($user_name2, $user_phone, $user_email, $id2);
             $test_user2->save();
 
             $result = User::getAll();
@@ -249,12 +249,12 @@
         function testUpdate()
         {
             $user_name = "Wolf";
-            $user_buy_quantity = 5;
+            // $user_buy_quantity = 5;
             $user_phone = '1234567890';
             $user_email = "howl@yellowstone.com";
-            $activity_id = 100;
+            // $activity_id = 100;
             $id = 1;
-            $test_user = new User($user_name, $user_buy_quantity, $user_phone, $user_email, $activity_id, $id);
+            $test_user = new User($user_name, $user_phone, $user_email, $id);
             $test_user->save();
 
             $test_user->setUserName("Wolfy");
@@ -268,12 +268,12 @@
         function testSave()
         {
             $user_name = "Wolf";
-            $user_buy_quantity = 5;
+            // $user_buy_quantity = 5;
             $user_phone = '1234567890';
             $user_email = "howl@yellowstone.com";
-            $activity_id = 100;
+            // $activity_id = 100;
             $id = 1;
-            $test_user = new User($user_name, $user_buy_quantity, $user_phone, $user_email, $activity_id, $id);
+            $test_user = new User($user_name, $user_phone, $user_email, $id);
             $test_user->save();
 
             $result = User::getAll();
@@ -281,16 +281,16 @@
             $this->assertEquals($test_user, $result[0]);
         }
 
-        //This test is supposed to be testing the delete function on the activities_user join table. We're not sure if it's properly doing that. 
+        //This test is supposed to be testing the delete function on the activities_user join table. We're not sure if it's properly doing that.
         function testDelete()
         {
             $user_name = "Wolf";
-            $user_buy_quantity = 5;
+            // $user_buy_quantity = 5;
             $user_phone = '1234567890';
             $user_email = "howl@yellowstone.com";
-            $activity_id = 100;
+            // $activity_id = 100;
             $id = 1;
-            $test_user = new User($user_name, $user_buy_quantity, $user_phone, $user_email, $activity_id, $id);
+            $test_user = new User($user_name, $user_phone, $user_email, $id);
             $test_user->save();
 
             $activity_name = "Activity One";
@@ -300,9 +300,8 @@
             $activity_price = "Price of Activity One";
             $activity_quantity = 10;
             $business_id = 1;
-            $activity_category_id = 2;
             $id = 1;
-            $test_activity = new Activity($activity_name, $activity_date, $activity_location, $activity_description, $activity_price, $activity_quantity, $business_id, $activity_category_id, $id);
+            $test_activity = new Activity($activity_name, $activity_date, $activity_location, $activity_description, $activity_price, $activity_quantity, $business_id, $id);
             $test_activity->save();
 
             $test_user->addActivity($test_user);
@@ -314,17 +313,17 @@
         function testFind()
         {
             $user_name = "Wolf";
-            $user_buy_quantity = 5;
+            // $user_buy_quantity = 5;
             $user_phone = '1234567890';
             $user_email = "howl@yellowstone.com";
-            $activity_id = 100;
+            // $activity_id = 100;
             $id = 1;
-            $test_user = new User($user_name, $user_buy_quantity, $user_phone, $user_email, $activity_id, $id);
+            $test_user = new User($user_name, $user_phone, $user_email, $id);
             $test_user->save();
 
             $user_name2 = "WolfMan";
             $id2 = 2;
-            $test_user2 = new User($user_name2, $user_buy_quantity, $user_phone, $user_email, $activity_id, $id2);
+            $test_user2 = new User($user_name2, $user_phone, $user_email, $id2);
             $test_user2->save();
 
             $result = User::find($test_user->getId());
@@ -335,12 +334,12 @@
         function testAddActivity()
         {
             $user_name = "Wolf";
-            $user_buy_quantity = 5;
+            // $user_buy_quantity = 5;
             $user_phone = '1234567890';
             $user_email = "howl@yellowstone.com";
-            $activity_id = 100;
+            // $activity_id = 100;
             $id = 1;
-            $test_user = new User($user_name, $user_buy_quantity, $user_phone, $user_email, $activity_id, $id);
+            $test_user = new User($user_name, $user_phone, $user_email, $id);
             $test_user->save();
 
             $activity_name = "Activity One";
@@ -350,9 +349,8 @@
             $activity_price = "Price of Activity One";
             $activity_quantity = 10;
             $business_id = 1;
-            $activity_category_id = 2;
             $id = 1;
-            $test_activity = new Activity($activity_name, $activity_date, $activity_location, $activity_description, $activity_price, $activity_quantity, $business_id, $activity_category_id, $id);
+            $test_activity = new Activity($activity_name, $activity_date, $activity_location, $activity_description, $activity_price, $activity_quantity, $business_id, $id);
             $test_activity->save();
 
             $test_user->addActivity($test_activity);
@@ -361,7 +359,7 @@
             $this->assertEquals($test_activity, $result[0]);
         }
 
-        function testGetActivity()
+        function testGetActivities()
         {
             $activity_name = "Activity One";
             $activity_date = '2016-01-01';
@@ -370,9 +368,8 @@
             $activity_price = "Price of Activity One";
             $activity_quantity = 10;
             $business_id = 1;
-            $activity_category_id = 2;
             $id = 1;
-            $test_activity = new Activity($activity_name, $activity_date, $activity_location, $activity_description, $activity_price, $activity_quantity, $business_id, $activity_category_id, $id);
+            $test_activity = new Activity($activity_name, $activity_date, $activity_location, $activity_description, $activity_price, $activity_quantity, $business_id, $id);
             $test_activity->save();
 
             $activity_name2 = "Activity Two";
@@ -382,18 +379,17 @@
             $activity_price2 = "Price of Activity Two";
             $activity_quantity2 = 20;
             $business_id2 = 21;
-            $activity_category_id2 = 22;
             $id2 = 2;
-            $test_activity2 = new Activity($activity_name, $activity_date, $activity_location, $activity_description, $activity_price, $activity_quantity, $business_id, $activity_category_id, $id);
+            $test_activity2 = new Activity($activity_name, $activity_date, $activity_location, $activity_description, $activity_price, $activity_quantity, $business_id, $id);
             $test_activity2->save();
 
             $user_name = "Wolf";
-            $user_buy_quantity = 5;
+            // $user_buy_quantity = 5;
             $user_phone = '1234567890';
             $user_email = "howl@yellowstone.com";
-            $activity_id = 100;
+            // $activity_id = 100;
             $id = 1;
-            $test_user = new User($user_name, $user_buy_quantity, $user_phone, $user_email, $activity_id, $id);
+            $test_user = new User($user_name, $user_phone, $user_email, $id);
             $test_user->save();
 
             $test_user->addActivity($test_activity);

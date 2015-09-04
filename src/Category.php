@@ -102,9 +102,8 @@
                 $activity_price = $activity['activity_price'];
                 $activity_quantity = $activity['activity_quantity'];
                 $business_id = $activity['business_id'];
-                $activity_category_id = $activity['activity_category_id'];
                 $id = $activity['id'];
-                $new_activity = new Activity($activity_name, $activity_date, $activity_location, $activity_description, $activity_price, $activity_quantity, $business_id, $activity_category_id, $id);
+                $new_activity = new Activity($activity_name, $activity_date, $activity_location, $activity_description, $activity_price, $activity_quantity, $business_id, $id);
                 array_push($activities_array, $new_activity);
             }
             return $activities_array;
@@ -127,9 +126,8 @@
                 $business_website = $business['business_website'];
                 $business_address = $business['business_address'];
                 $business_contact_email = $business['business_contact_email'];
-                $business_category_id = $business['business_category_id'];
                 $id = $business['id'];
-                $new_business = new Business($business_name, $business_phone, $business_contact, $business_website, $business_address, $business_contact_email, $business_category_id, $id);
+                $new_business = new Business($business_name, $business_phone, $business_contact, $business_website, $business_address, $business_contact_email, $id);
                 array_push($businesses_array, $new_business);
             }
             return $businesses_array;

@@ -25,17 +25,129 @@
         </div>
         </nav>
         <div class='container'>
-            <h1>{{ business.getBusinessName }}</h1>
-            <h2>Business Information</h2>
-            <ul>
-                <li>Phone Number: {{ business.getBusinessPhone }}</li>
-                <li>Ask for {{ business.getBusinessContact }}</li>
-                <li>Web Address: {{ business.getBusinessWebsite }}</li>
-                <li>Address: {{ business.getBusinessAddress }}</li>
-                <li>Email: {{ business.getBusinessContactEmail }}</li>
-            </ul>
+            <div class="container">
+                <div class="right">
+                    <form class="form-horizontal" action='/business/{{ business.getId }}' method='POST'>
+                        <input name="_method" type="hidden" value="patch">
+                        <fieldset>
+                            <div id="legend">
+                                <legend class="">Update Business information</legend>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="business_contact_email">E-mail</label>
+                                <div class="controls">
+                                    <input type="text" id="business_contact_email" name="business_contact_email" placeholder="" class="input-xlarge">
+                                    <p class="help-block">Enter your businesses E-mail</p>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label"  for="business_phone">Business Phone</label>
+                                <div class="controls">
+                                    <input type="text" id="business_phone" name="business_phone" placeholder="" class="input-xlarge">
+                                    <p class="help-block">Enter your businesses phone number</p>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label"  for="business_contact">Business Contact</label>
+                                <div class="controls">
+                                    <input type="text" id="business_contact" name="business_contact" placeholder="" class="input-xlarge">
+                                    <p class="help-block">Enter name of person at your business to contact</p>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label"  for="business_website">Business Website</label>
+                                <div class="controls">
+                                    <input type="text" id="business_website" name="business_website" placeholder="" class="input-xlarge">
+                                    <p class="help-block">Enter your businesses website</p>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label"  for="business_address">Business Address</label>
+                                <div class="controls">
+                                    <input type="text" id="business_address" name="business_address" placeholder="" class="input-xlarge">
+                                    <p class="help-block">Enter your businesses address</p>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="controls">
+                                    <button class="btn btn-success">Update Business</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
 
-            <button type='submit'>RSVP</button>
+                    <form action='/business/' method='post'>
+                        <input name="_method" type="hidden" value="delete">
+                        <button type='submit' class = "btn btn-danger">Delete this Business</button>
+                    </form>
+                </div>
+                <div class="left">
+                    <form class="form-horizontal" action='/activity' method='post'>
+                        <fieldset>
+                            <div id="legend">
+                                <legend class="">Add an Activity</legend>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label"  for="activity_name">Activity Name</label>
+                                <div class="controls">
+                                    <input type="text" id="activity_name" name="activity_name" placeholder="" class="input-xlarge">
+                                    <p class="help-block">Enter your activities name</p>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label"  for="activity_date">Activity Date</label>
+                                <div class="controls">
+                                    <input type="date" id="activity_date" name="activity_date" placeholder="" class="input-xlarge">
+                                    <p class="help-block">Enter the date of the activity</p>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label"  for="activity_location">Activity Location</label>
+                                <div class="controls">
+                                    <input type="text" id="activity_location" name="activity_location" placeholder="" class="input-xlarge">
+                                    <p class="help-block">Enter the address where the activity will take place</p>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label"  for="activity_description">Activity Description</label>
+                                <div class="controls">
+                                    <input type="text" id="activity_description" name="activity_description" placeholder="" class="input-xlarge">
+                                    <p class="help-block">Enter a description of the activity</p>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label"  for="activity_price">Activity Price</label>
+                                <div class="controls">
+                                    <input type="text" id="activity_price" name="activity_price" placeholder="" class="input-xlarge">
+                                    <p class="help-block">Enter the price of this activity</p>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label"  for="activity_quantity">Activity Quantity</label>
+                                <div class="controls">
+                                    <input type="text" id="activity_quantity" name="activity_quantity" placeholder="" class="input-xlarge">
+                                    <p class="help-block">Enter the number of spots available for this activity</p>
+                                </div>
+                            </div>
+                            <input type="hidden" name="business_id" value="{{ business.getId }}">
+                            <div class="control-group">
+                                <div class="controls">
+                                    <button class="btn btn-success">Add Activity</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                    <div id="legend">
+                        <legend class="">{{ business.getBusinessName }}</legend>
+                    </div>
+                    <ul>
+                        <li>Phone: {{ business.getBusinessPhone }}</li>
+                        <li>Contact: {{ business.getBusinessContact }}</li>
+                        <li>Website: {{ business.getBusinessWebsite }}</li>
+                        <li>Address: {{ business.getBusinessAddress }}</li>
+                        <li>Email: {{ business.getBusinessContactEmail }}</li>
+                    </ul>
+            </div>
         </div>
     </body>
 </html>

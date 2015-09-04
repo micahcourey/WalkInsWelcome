@@ -18,7 +18,6 @@
             $this->business_address = $business_address;
             $this->business_contact_email = $business_contact_email;
             $this->id = $id;
-
         }
 /////////////////////////////////GET/SET NAME/////////////////////////////////
         function getBusinessName()
@@ -103,31 +102,32 @@
 /////  MAY NEED TO CHANGE THE GetBusinessCategoryId and remove from this line:
         function save()
         {
-            $GLOBALS['DB']->exec("INSERT INTO businesses (business_name, business_phone, business_contact, business_website, business_address, business_contact_email) VALUES ('{$this->getBusinessName()}', '{$this->getBusinessPhone()}', '{$this->getBusinessContact()}', '{$this->getBusinessWebsite()}', '{$this->getBusinessAddress()}', '{$this->getBusinessContactEmail()}';");
+            $GLOBALS['DB']->exec("INSERT INTO businesses (business_name, business_phone, business_contact, business_website, business_address, business_contact_email) VALUES ('{$this->getBusinessName()}', '{$this->getBusinessPhone()}', '{$this->getBusinessContact()}', '{$this->getBusinessWebsite()}', '{$this->getBusinessAddress()}', '{$this->getBusinessContactEmail()}');");
             $this->id = $GLOBALS['DB']->lastInsertId();
+            //  var_dump($this->getBusinessContactEmail());
         }
 
         function updateContact($new_business_contact)
         {
-        $GLOBALS['DB']->exec("UPDATE businesses SET business_contact ='{$new_business_contact}' WHERE id = {$this->getId()}, {$this->getBusinessContact()};");
+        $GLOBALS['DB']->exec("UPDATE businesses SET business_contact ='{$new_business_contact}' WHERE id = {$this->getId()};");
         $this->setBusinessContact($new_business_contact);
         }
 
         function updatePhone($new_business_phone)
         {
-        $GLOBALS['DB']->exec("UPDATE businesses SET business_phone ='{$new_business_phone}' WHERE id = {$this->getId()}, {$this->getBusinessPhone()};");
+        $GLOBALS['DB']->exec("UPDATE businesses SET business_phone ='{$new_business_phone}' WHERE id = {$this->getId()};");
         $this->setBusinessPhone($new_business_phone);
         }
 
         function updateWebsite($new_business_website)
         {
-        $GLOBALS['DB']->exec("UPDATE businesses SET business_website ='{$new_business_website}' WHERE id = {$this->getId()}, {$this->getBusinessWebsite()};");
+        $GLOBALS['DB']->exec("UPDATE businesses SET business_website ='{$new_business_website}' WHERE id = {$this->getId()};");
         $this->setBusinessWebsite($new_business_website);
         }
 
         function updateContactEmail($new_business_contact_email)
         {
-        $GLOBALS['DB']->exec("UPDATE businesses SET business_contact_email ='{$new_business_contact_email}' WHERE id = {$this->getId()}, {$this->getBusinessContactEmail()};");
+        $GLOBALS['DB']->exec("UPDATE businesses SET business_contact_email ='{$new_business_contact_email}' WHERE id = {$this->getId()};");
         $this->setBusinessContactEmail($new_business_contact_email);
         }
 
@@ -147,6 +147,11 @@
             }
             return $found_business;
 
+        }
+
+        function delete()
+        {
+            $GLOBALS['DB']->exec("DELETE FROM businesses WHERE id = {$this->getID()};");
         }
 
         static function getAll()
@@ -184,7 +189,7 @@
 
         function getActivities()
         {
-            $business_id=$this->getId();
+            $business_id = $this->getId();
             $returned_activities = $GLOBALS['DB']->query(
             "SELECT activities.* FROM businesses
             JOIN activities_businesses ON (businesses.id = activities_businesses.business_id)
@@ -200,9 +205,8 @@
                 $activity_price = $activity['activity_price'];
                 $activity_quantity = $activity['activity_quantity'];
                 $business_id = $activity['business_id'];
-                $activity_category_id = $activity['activity_category_id'];
                 $id = $activity['id'];
-                $new_activity = new Activity($activity_name, $activity_date, $activity_location, $activity_description, $activity_price, $activity_quantity, $business_id, $activity_category_id, $id);
+                $new_activity = new Activity($activity_name, $activity_date, $activity_location, $activity_description, $activity_price, $activity_quantity, $business_id, $id);
                 array_push($activities, $new_activity);
             }
             return $activities;

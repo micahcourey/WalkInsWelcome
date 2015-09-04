@@ -39,9 +39,9 @@
                             </div>
                         </div>
                         <div class="control-group">
-                            <label class="control-label" for="business_email">E-mail</label>
+                            <label class="control-label" for="business_contact_email">E-mail</label>
                             <div class="controls">
-                                <input type="text" id="business_email" name="business_email" placeholder="" class="input-xlarge">
+                                <input type="text" id="business_contact_email" name="business_contact_email" placeholder="" class="input-xlarge">
                                 <p class="help-block">Enter your businesses E-mail</p>
                             </div>
                         </div>
@@ -67,7 +67,7 @@
                             </div>
                         </div>
                         <div class="control-group">
-                            <label class="control-label"  for="business_address">Business Name</label>
+                            <label class="control-label"  for="business_address">Business Address</label>
                             <div class="controls">
                                 <input type="text" id="business_address" name="business_address" placeholder="" class="input-xlarge">
                                 <p class="help-block">Enter your businesses address</p>
@@ -95,6 +95,9 @@
                 {% else %}
                     <p>There are no businesses currently offering today</p>
                 {% endif %}
+                <form action='/delete_businesses' method='post'>
+                   <button type='submit' class="btn btn-danger">Delete All Businesses</button>
+               </form> 
             </div>
         </div>
     </body>
