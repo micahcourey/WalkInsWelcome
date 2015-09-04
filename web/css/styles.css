@@ -18,6 +18,12 @@
     background-color: black;
 }
 
+body {
+    background-image: url(http://www.jonathanphotos.com/Pictures/North%20America%20web/Oregon/Portland/Oregon%20Sunset%20from%20the%20Portland%20City%20Grill%20web%201000%20n%2072.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 .navbar-brand {
     margin: 20px 40px 0 0;
     font-size: 25px
@@ -25,6 +31,7 @@
 
 label {
     font-size: 16px;
+    color: #ffffff;
 }
 
 .help-block {
@@ -37,12 +44,21 @@ label {
 
 legend {
     font-size: 30px;
+    color: #ffffff;
 }
 
 a {
-    font-size: 24px;
+    font-size: 20px;
+    color: #ffffff;
 }
 
-li {
-    list-style: none;
+.index {
+    margin-bottom: 20px;
+}
+h4 {
+    color: #ffffff;
+}
+
+h3 {
+    color: #ffffff;
 }

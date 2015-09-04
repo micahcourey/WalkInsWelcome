@@ -31,11 +31,10 @@
 
             {% if activities is not empty %}
 
-                <ul>
                     {% for activity in activities %}
-                        <li><a href="/activity/{{ activity.getId }}">{{ activity.getActivityName }} - {{ activity.getActivityDescription }}</a></li>
+                        <h4 class='index'><a href="/activity/{{ activity.getId }}">{{ activity.getActivityName }} - {{ activity.getActivityDescription }}</h4></li>
                     {% endfor %}
-                </ul>
+
             {% else %}
                 <p>There are no activities today</p>
             {% endif %}
