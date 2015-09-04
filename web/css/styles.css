@@ -13,7 +13,7 @@
     background-size: 18%;
     background-repeat: no-repeat;
     background-position: right;
-    border-right: 50px;
+    margin-right: 6px;
     height: 100px;
     background-color: black;
 }
@@ -25,7 +25,7 @@ body {
 }
 
 .navbar-brand {
-    margin: 20px 40px 0 0;
+    margin: 20px 40px 0 0 ;
     font-size: 25px
 }
 
@@ -45,6 +45,10 @@ label {
 legend {
     font-size: 30px;
     color: #ffffff;
+}
+
+.container-fluid {
+    margin-left: 10px;
 }
 
 a {
