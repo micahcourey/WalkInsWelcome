@@ -75,8 +75,7 @@
                             </div>
                         </fieldset>
                     </form>
-
-                    <form action='/business/' method='post'>
+                    <form action='/business/{{ business.getId }}' method='post'>
                         <input name="_method" type="hidden" value="delete">
                         <button type='submit' class = "btn btn-danger">Delete this Business</button>
                     </form>
